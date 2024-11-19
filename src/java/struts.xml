@@ -1,0 +1,30 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <!-- Configuration for the default package. -->
+    <package name="default" extends="struts-default">
+        
+      <action name="saveUser" class="action.UserSavedAction">
+            <result name="success">/index.jsp</result>
+             <result name="error">/index.jsp</result>
+        </action>
+        
+        <!-- action to access the action files -->
+        <action name="loginUser" class="action.LoginAction" method="execute">
+            <result name="success">/dashboard.jsp</result> <!-- Redirect to the home page -->
+            <result name="error">/login.jsp</result>  <!-- Stay on login page -->
+        </action>
+         <action name="fetchUsers" class="action.tableData">
+        <result name="success">/listofTables.jsp</result>
+        </action>
+
+
+ <!-- action to access the action files -->
+        <action name="getuser" class="action.GetHint" >
+            <result name="success">/login.jsp</result> <!-- Redirect to the home page -->
+            <result name="error">/index.jsp</result>  <!-- Stay on login page -->
+        </action>
+    </package>
+</struts>
